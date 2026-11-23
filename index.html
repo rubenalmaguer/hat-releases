@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hat</title>
+<meta name="description" content="hat: Human Approved Translation. AI drafts, checks and suggests; a reviewer decides. Download hat.exe for Windows.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='27' stroke-linecap='round' stroke-linejoin='round' transform='translate(265.5 258) scale(1.36) translate(-211 -198)'%3E%3Cpath d='M193 212 C200 178 197 121 222 105 C249 89 271 110 275 140 C278 165 279 178 283 190'/%3E%3Cpath d='M181 187 C148 160 100 142 71 170 C42 199 52 254 110 267 C170 280 230 240 270 222 C310 206 345 210 352 232 C359 256 300 284 218 295'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root { --bg: #fbfaf7; --fg: #1d1d1b; --muted: #6b6a66; --line: #e3e1db; --panel: #f2f0eb; --accent: #1d1d1b; --on-accent: #fbfaf7; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #161615; --fg: #ecebe6; --muted: #9a9993; --line: #2c2c2a; --panel: #1f1f1d; --accent: #ecebe6; --on-accent: #161615; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 64px 16px 48px; }
+  a { color: inherit; }
+  code, pre { font: 14px/1.5 ui-monospace, "Cascadia Code", Consolas, monospace; }
+  code { padding: 1px 5px; border-radius: 5px; background: var(--panel); }
+  pre { margin: 8px 0 0; padding: 12px 14px; border-radius: 8px; background: var(--panel); overflow-x: auto; }
+  pre code { padding: 0; background: none; }
+
+  header { text-align: center; }
+  .logo { width: 72px; height: 72px; border-radius: 16px; }
+  h1 { margin: 12px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; }
+  .tag { margin: 4px 0 0; color: var(--muted); }
+  .pitch { max-width: 520px; margin: 20px auto 28px; font-size: 18px; }
+  .download { display: inline-block; padding: 14px 28px; border-radius: 10px; background: var(--accent); color: var(--on-accent);
+    font-weight: 600; text-decoration: none; }
+  .download:hover { opacity: 0.88; }
+  .download:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .version { min-height: 1.6em; margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+
+  section { margin-top: 64px; }
+  h2 { margin: 0 0 4px; font-size: 24px; letter-spacing: -0.01em; }
+  .lead { margin: 0 0 20px; color: var(--muted); }
+  ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  ol.steps > li { position: relative; padding: 0 0 20px 40px; counter-increment: step; }
+  ol.steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%;
+    border: 1px solid var(--line); display: grid; place-items: center; font-size: 13px; font-weight: 600; }
+  ol.steps p { margin: 0; }
+  .ask { margin: 8px 0 0; padding: 0; list-style: none; }
+  .ask li { margin-top: 6px; padding: 8px 12px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .feature { padding: 16px; border: 1px solid var(--line); border-radius: 10px; }
+  .feature h3 { margin: 0 0 4px; font-size: 16px; }
+  .feature p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <!-- hat's icon: a hat, after Linear A sign A341 (𐚁), the same as hat.exe's. -->
+    <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="hat">
+      <rect width="512" height="512" rx="112" fill="#000"/>
+      <g fill="none" stroke="#fff" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" transform="translate(265.5 258) scale(1.36) translate(-211 -198)">
+        <path d="M193 212 C200 178 197 121 222 105 C249 89 271 110 275 140 C278 165 279 178 283 190"/>
+        <path d="M181 187 C148 160 100 142 71 170 C42 199 52 254 110 267 C170 280 230 240 270 222 C310 206 345 210 352 232 C359 256 300 284 218 295"/>
+      </g>
+    </svg>
+    <h1>hat</h1>
+    <p class="tag">Human Approved Translation</p>
+    <p class="pitch">Translates, checks and reviews localization files with AI, keeping a person in charge of what ships.</p>
+    <a class="download" href="https://github.com/rubenalmaguer/hat-releases/releases/latest/download/hat.exe">Download hat.exe</a>
+    <p class="version" id="version">Latest release, for Windows</p>
+  </header>
+
+  <section>
+    <h2>Work with an agent</h2>
+    <p class="lead">An agent with a terminal, such as Claude Code, can run every step for you, from import to export. Ask in plain words; you decide what ships in the review page.</p>
+    <ol class="steps">
+      <li><p><strong>Install hat.</strong> Open the downloaded hat.exe. It installs itself for you (no admin rights), puts <code>hat</code> on your PATH, and keeps itself up to date.</p></li>
+      <li><p><strong>Add your model key</strong>, once, yourself: hat reads it at a prompt that doesn’t show it, so it never passes through the agent.</p>
+        <pre><code>hat keys set openai</code></pre></li>
+      <li><p><strong>Connect the agent to the review page</strong>, once:</p>
+        <pre><code>claude mcp add hat -- hat mcp</code></pre></li>
+      <li><p><strong>Ask for the job.</strong> The agent finds what it needs in <code>hat help</code> and runs the steps.</p>
+        <ul class="ask">
+          <li>Import job.sdlppx, translate it into Spanish (Mexico), run the common checks and open the review.</li>
+          <li>Proofread the subtitles in this folder and check them against our subtitle limits.</li>
+          <li>Turn house-style.md into checks and run them on every file.</li>
+        </ul></li>
+      <li><p><strong>Review together.</strong> In the page, the agent works beside you: it reads the segments, suggests targets and flags problems, each batch as its own button in the AI bar. It never changes a target; you accept, edit or dismiss. “This” is the segment you chose.</p>
+        <ul class="ask">
+          <li>Is this segment right?</li>
+          <li>Find every place “account” is translated differently and suggest one term.</li>
+        </ul></li>
+      <li><p><strong>Finish.</strong> Click Done in the page, then ask for the files back.</p>
+        <ul class="ask">
+          <li>Export the job and make the QA report.</li>
+        </ul></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What hat does</h2>
+    <p class="lead">Steps are separate commands, so a job can stop, be checked and go on.</p>
+    <div class="features">
+      <div class="feature"><h3>Your files, as they are</h3><p>Trados SDLXLIFF and SDLPPX packages, SRT subtitles and HTML pages. Export puts the targets back without touching anything else.</p></div>
+      <div class="feature"><h3>AI targets</h3><p>OpenAI, Gemini, Anthropic or a gateway, with your own keys, your glossaries, guidelines and memory matches.</p></div>
+      <div class="feature"><h3>Checks</h3><p>Tags, numbers, terms, subtitle limits and spelling, plus checks written from your style guide and tested on examples.</p></div>
+      <div class="feature"><h3>AI proofreading</h3><p>Suggestions for each segment, verified a second time, with the reason for every change.</p></div>
+      <div class="feature"><h3>Review in the browser</h3><p>Source, target and checks side by side; subtitles with their video. Saved as you go, or packed as one page for a reviewer elsewhere.</p></div>
+      <div class="feature"><h3>Reports</h3><p>A QA report and a Trados-like analysis, as Excel files to hand over.</p></div>
+    </div>
+    <pre><code>hat translate job.sdlppx.es-MX.hat.json
+hat qa job.sdlppx.es-MX.hat.json --checks @common
+hat proof job.sdlppx.es-MX.hat.json --verify
+hat review job.sdlppx.es-MX.hat.json
+hat export job.sdlppx.es-MX.hat.json
+hat help</code></pre>
+  </section>
+
+  <footer>
+    <a href="https://github.com/rubenalmaguer/hat-releases/releases">All releases</a>
+  </footer>
+</main>
+<script>
+  // The latest version (its date), when GitHub answers; the download link works without it.
+  fetch("https://api.github.com/repos/rubenalmaguer/hat-releases/releases/latest")
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((rel) => { document.getElementById("version").textContent = `Version ${rel.tag_name.replace(/^v/, "")}, for Windows`; })
+    .catch(() => {});
+</script>
+</body>
+</html>
