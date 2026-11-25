@@ -123,9 +123,13 @@ hat keys set gomodel --base-url https://your-gateway</code></pre>
     <pre><code>hat mcp install
 claude mcp add hat -- hat mcp</code></pre>
     <h3>Codex can’t run hat</h3>
-    <p>Codex runs commands as another Windows user, who can’t see hat. Add this to <code>.codex\config.toml</code> in your user folder, or use Full access.</p>
+    <p>Codex runs commands as another Windows user, who can’t see hat. Setup offers to change that, and <code>hat mcp install</code> does it; by hand, add this to <code>.codex\config.toml</code> in your user folder, or use Full access.</p>
     <pre><code>[windows]
-sandbox = "unelevated"</code></pre>
+sandbox = "unelevated"
+
+[sandbox_workspace_write]
+writable_roots = ['C:\Users\you\AppData\Local\hat']
+network_access = true</code></pre>
     <h3>Blocked by security software</h3>
     <p>Add an exception for hat.exe in <code>%LOCALAPPDATA%\Programs\hat</code>.</p>
     <h3>Uninstall</h3>
