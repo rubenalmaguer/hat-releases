@@ -45,6 +45,9 @@
   .feature h3 { margin: 0 0 4px; font-size: 16px; }
   .feature p { margin: 0; font-size: 14px; color: var(--muted); }
 
+  .more h3 { margin: 24px 0 4px; font-size: 16px; }
+  .more p { margin: 0; }
+
   footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); text-align: center; }
 </style>
 </head>
@@ -70,18 +73,14 @@
     <h2>Work with an agent</h2>
     <p class="lead">An agent with a terminal, such as Claude Code, can run every step for you, from import to export. Ask in plain words; you decide what ships in the review page.</p>
     <ol class="steps">
-      <li><p><strong>Install hat.</strong> Open the downloaded hat.exe. It installs itself for you (no admin rights), puts <code>hat</code> on your PATH, and keeps itself up to date.</p></li>
-      <li><p><strong>Add your model key</strong>, once, yourself: hat reads it at a prompt that doesn’t show it, so it never passes through the agent.</p>
-        <pre><code>hat keys set openai</code></pre></li>
-      <li><p><strong>Connect the agent to the review page</strong>, once:</p>
-        <pre><code>claude mcp add hat -- hat mcp</code></pre></li>
+      <li><p><strong>Install hat.</strong> Open the downloaded hat.exe. It installs itself for you (no admin rights), puts <code>hat</code> on your PATH and keeps itself up to date. It asks for your model keys and offers to connect the agents it finds (Claude Code, Codex, OpenCode).</p></li>
       <li><p><strong>Ask for the job.</strong> The agent finds what it needs in <code>hat help</code> and runs the steps.</p>
         <ul class="ask">
           <li>Import job.sdlppx, translate it into Spanish (Mexico), run the common checks and open the review.</li>
           <li>Proofread the subtitles in this folder and check them against our subtitle limits.</li>
           <li>Turn house-style.md into checks and run them on every file.</li>
         </ul></li>
-      <li><p><strong>Review together.</strong> In the page, the agent works beside you: it reads the segments, suggests targets and flags problems, each batch as its own button in the AI bar. It never changes a target; you accept, edit or dismiss. “This” is the segment you chose.</p>
+      <li><p><strong>Review together.</strong> In the page, the agent works beside you: it reads the segments, suggests targets and flags problems, each batch as a set in the AI tab. It never changes a target; you accept, edit or dismiss. “This” is the segment you chose.</p>
         <ul class="ask">
           <li>Is this segment right?</li>
           <li>Find every place “account” is translated differently and suggest one term.</li>
@@ -110,6 +109,27 @@ hat proof job.sdlppx.es-MX.hat.json --verify
 hat review job.sdlppx.es-MX.hat.json
 hat export job.sdlppx.es-MX.hat.json
 hat help</code></pre>
+  </section>
+
+  <section class="more">
+    <h2>Advanced setup</h2>
+    <p class="lead">For what the installer skipped, or when something doesn’t work.</p>
+    <h3>Add a model key later</h3>
+    <p>Type it yourself: hat reads it at a prompt that doesn’t show it, so it never passes through the agent.</p>
+    <pre><code>hat keys set openai
+hat keys set gomodel --base-url https://your-gateway</code></pre>
+    <h3>Connect an agent by hand</h3>
+    <p>The first adds hat to every agent it finds; the second, to Claude Code alone. Restart the agent afterwards.</p>
+    <pre><code>hat mcp install
+claude mcp add hat -- hat mcp</code></pre>
+    <h3>Codex can’t run hat</h3>
+    <p>Codex runs commands as another Windows user, who can’t see hat. Add this to <code>.codex\config.toml</code> in your user folder, or use Full access.</p>
+    <pre><code>[windows]
+sandbox = "unelevated"</code></pre>
+    <h3>Blocked by security software</h3>
+    <p>Add an exception for hat.exe in <code>%LOCALAPPDATA%\Programs\hat</code>.</p>
+    <h3>Uninstall</h3>
+    <p>Settings › Apps › hat › Uninstall, or <code>hat uninstall</code>. Your keys, profiles and cache stay unless you say so.</p>
   </section>
 
   <footer>
