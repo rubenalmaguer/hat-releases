@@ -123,7 +123,7 @@ hat keys set gomodel --base-url https://your-gateway</code></pre>
     <pre><code>hat mcp install
 claude mcp add hat -- hat mcp</code></pre>
     <h3>Codex can’t run hat</h3>
-    <p>Codex runs commands as another Windows user, who can’t see hat. Setup offers to change that, and <code>hat mcp install</code> does it; by hand, add this to <code>.codex\config.toml</code> in your user folder, or use Full access.</p>
+    <p>Codex runs commands as another Windows user, who can’t see hat. Once Codex is connected, hat’s own tools run hat for it. If it still needs hat in its own shell, add this to <code>.codex\config.toml</code> in your user folder, or use Full access.</p>
     <pre><code>[windows]
 sandbox = "unelevated"
 
